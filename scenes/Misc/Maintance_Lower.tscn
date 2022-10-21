@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/models/misc/Maintance_walk_lower.glb" type="PackedScene" id=1]
+
+[sub_resource type="CubeMesh" id=1]
+flip_faces = true
+size = Vector3( 120, 20, 21.684 )
+
+[node name="Maintanace_lower" type="CSGMesh"]
+operation = 2
+invert_faces = true
+mesh = SubResource( 1 )
+
+[node name="Maintance_walk_lower" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.054, 2.88404, 11.002 )

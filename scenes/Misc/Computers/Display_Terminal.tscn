@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/models/misc/Computers/Display_terminal.glb" type="PackedScene" id=1]
+
+[node name="Display_Terminal" type="Spatial"]
+
+[node name="Display_terminal" parent="." instance=ExtResource( 1 )]
