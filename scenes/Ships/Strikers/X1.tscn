@@ -1,3 +1,8 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/models/ships/X1.glb" type="PackedScene" id=1]
 
 [node name="ship" type="Spatial"]
+
+[node name="X1" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )

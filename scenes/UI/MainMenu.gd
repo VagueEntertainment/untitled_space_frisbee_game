@@ -17,6 +17,7 @@ func _ready():
 
 
 func _on_Quit_pressed():
+	get_tree().quit()
 	pass # Replace with function body.
 
 
@@ -26,3 +27,10 @@ func _on_Settings_pressed():
 
 func _on_Play_pressed():
 	pass # Replace with function body.
+
+
+#func _on_MainMenu_resized():
+#	print("Panel: ",$Panel.rect_size.x)
+#	print("VBox: ",$Panel/VBoxContainer.rect_size.x)
+#	print("Control: ",$Panel/VBoxContainer/Control.rect_size.x)
+#	pass # Replace with function body.

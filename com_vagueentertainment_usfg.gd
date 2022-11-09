@@ -1,6 +1,6 @@
 extends Node
 
-var background = preload("res://scenes/World/LauchBay.tscn")
+var background = preload("res://scenes/World/LaunchBay.tscn")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

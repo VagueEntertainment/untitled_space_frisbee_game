@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/models/ships/LionHead.glb" type="PackedScene" id=1]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 2.0
@@ -7,4 +9,12 @@ mid_height = 4.8
 [node name="ship" type="Spatial"]
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
+visible = false
 mesh = SubResource( 1 )
+
+[node name="LionHead" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -1, 4.44089e-16, -8.74228e-08, -2.75364e-09, 0.999504, 0.031498, 8.73794e-08, 0.031498, -0.999504, 0, 1.59237, -3.31448 )
+far = 2000.0

@@ -1,0 +1,170 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scenes/World/Tutorial.gd" type="Script" id=1]
+[ext_resource path="res://assets/img/Checkerboard_pattern.png" type="Texture" id=2]
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 100, 50, 3.46665 )
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 100, 102.072, 3.46665 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 100, 101.399, 3.46665 )
+
+[sub_resource type="SpatialMaterial" id=4]
+params_cull_mode = 1
+albedo_texture = ExtResource( 2 )
+uv1_scale = Vector3( 18.287, 10.504, 1 )
+uv1_offset = Vector3( -0.217, 1.205, 0 )
+
+[sub_resource type="CubeMesh" id=1]
+material = SubResource( 4 )
+size = Vector3( 200, 100, 200 )
+
+[sub_resource type="CylinderMesh" id=2]
+top_radius = 20.0
+bottom_radius = 20.0
+height = 0.03
+radial_segments = 12
+
+[sub_resource type="CylinderShape" id=3]
+
+[sub_resource type="CylinderMesh" id=5]
+height = 0.1
+
+[sub_resource type="ConvexPolygonShape" id=6]
+points = PoolVector3Array( 0.199019, 0.05, 0.906863, -0.120778, -0.0580645, -1.00806, -0.217677, -0.0580645, -0.991882, 0.217677, -0.0580645, 0.991882, -0.991882, -0.0580645, 0.21748, -0.774064, 0.05, -0.52326, 0.862657, 0.05, -0.346434, 1.00806, -0.0580645, 0.120778, -0.729857, 0.05, 0.582262, 0.110426, 0.05, -0.921659, 0.637046, -0.0580645, -0.798281, 0.774064, 0.05, 0.52326, -0.491797, -0.0580645, 0.894983, -0.846632, -0.0580645, -0.572315, 0.637046, -0.0580645, 0.798281, -0.921659, 0.05, -0.110426, -0.449643, 0.05, -0.81827, -0.258021, 0.05, 0.892068, 0.582442, 0.05, -0.729857, 0.894983, -0.0580645, -0.491797, 0.921659, 0.05, 0.110426, -0.846632, -0.0580645, 0.572315, 0.282211, -0.0580645, -0.975502, -0.991882, -0.0580645, -0.21748, 0.894983, -0.0580645, 0.491797, -0.637046, -0.0580645, -0.798281, -0.892068, 0.05, 0.258021, -0.120778, -0.0580645, 1.00806, 0.449643, 0.05, 0.81827, 1.00806, -0.0580645, -0.120778, -0.582442, 0.05, 0.729857, -0.199019, 0.05, -0.906863, 0.449643, 0.05, -0.81827, 0.729857, 0.05, -0.582262, -0.862657, 0.05, -0.346254, 0.892068, 0.05, 0.258021, -0.637046, -0.0580645, 0.798281, -0.378912, -0.0580645, -0.943531, 0.921659, 0.05, -0.110426, 0.378912, -0.0580645, 0.943334, 0.110426, 0.05, 0.921659, 0.582442, 0.05, 0.729857, -0.582442, 0.05, -0.729857, 0.798281, -0.0580645, 0.636849, -1.00806, -0.0580645, 0.120778, -0.81827, 0.05, 0.449643, -0.943531, -0.0580645, 0.378715, 0.491797, -0.0580645, -0.894983, 0.975699, -0.0580645, -0.282211, 0.120778, -0.0580645, -1.00806, 0.798281, -0.0580645, -0.636849, -0.449643, 0.05, 0.81827, -0.921659, 0.05, 0.110426, -0.894983, -0.0580645, -0.491797, -0.110426, 0.05, 0.921659, 0.975699, -0.0580645, 0.282211, -0.282211, -0.0580645, 0.975699, 0.346434, 0.05, -0.862476, -0.798281, -0.0580645, -0.636849, -1.00806, -0.0580645, -0.120778, 0.120778, -0.0580645, 1.00806, 0.491797, -0.0580645, 0.894983, -0.491797, -0.0580645, -0.894983, 0.862657, 0.05, 0.346434 )
+
+[node name="Tutorial" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 99.2389 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -101.481 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="StaticBody"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -100.36, 0, -1.12129 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="StaticBody"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 100.36, 0, -1.12128 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, -3.97451, -51.9083, -1.12129 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, -4.38688e-06, 51.9083, -1.12128 )
+shape = SubResource( 9 )
+
+[node name="CSGMesh" type="CSGMesh" parent="StaticBody"]
+mesh = SubResource( 1 )
+
+[node name="Team1" type="Spatial" parent="."]
+
+[node name="Strikers" type="Spatial" parent="Team1"]
+
+[node name="Striker1" type="Position3D" parent="Team1/Strikers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.0778, 0, 0 )
+
+[node name="Striker2" type="Position3D" parent="Team1/Strikers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.0415, 0, -13.8014 )
+
+[node name="Striker3" type="Position3D" parent="Team1/Strikers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.4371, 0, 15.1675 )
+
+[node name="Midfield" type="Spatial" parent="Team1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.2601, 0, 0 )
+
+[node name="Midfield1" type="Position3D" parent="Team1/Midfield"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.97459, 0, 0 )
+
+[node name="Midfield2" type="Position3D" parent="Team1/Midfield"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.033, 0, -25 )
+
+[node name="Midfield3" type="Position3D" parent="Team1/Midfield"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.975, 0, 25 )
+
+[node name="Defenders" type="Spatial" parent="Team1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7095, 0, 0 )
+visible = false
+
+[node name="Defender1" type="Position3D" parent="Team1/Defenders"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.03304, 0, -2.74714 )
+
+[node name="Defender2" type="Position3D" parent="Team1/Defenders"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.97459, 0, 3.25371 )
+
+[node name="Team2" type="Spatial" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+
+[node name="Strikers" type="Spatial" parent="Team2"]
+
+[node name="Striker1" type="Position3D" parent="Team2/Strikers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.0883, 0, -1.40871e-06 )
+
+[node name="Striker2" type="Position3D" parent="Team2/Strikers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.7179, 0, -15.7981 )
+
+[node name="Striker3" type="Position3D" parent="Team2/Strikers"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.9281, 0, 16.8267 )
+
+[node name="Midfield" type="Spatial" parent="Team2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.9279, 0, -4.02188e-06 )
+
+[node name="Midfield1" type="Position3D" parent="Team2/Midfield"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.97459, 0, 0 )
+
+[node name="Midfield2" type="Position3D" parent="Team2/Midfield"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.033, 0, -25 )
+
+[node name="Midfield3" type="Position3D" parent="Team2/Midfield"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.975, 0, 25 )
+
+[node name="Defenders" type="Spatial" parent="Team2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7095, 0, 0 )
+visible = false
+
+[node name="Defender1" type="Position3D" parent="Team2/Defenders"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.03304, 0, -2.74714 )
+
+[node name="Defender2" type="Position3D" parent="Team2/Defenders"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.97459, 0, 3.25371 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+visible = false
+mesh = SubResource( 2 )
+
+[node name="SpringArm" type="SpringArm" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 10, 0 )
+shape = SubResource( 3 )
+spring_length = 30.0
+margin = 0.03
+
+[node name="Camera" type="Camera" parent="SpringArm"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.305, 4, 12.177 )
+far = 212.3
+
+[node name="Disc" type="RigidBody" parent="."]
+gravity_scale = 0.0
+linear_velocity = Vector3( -100, 0, 0 )
+angular_velocity = Vector3( 0, 200, 0 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Disc"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.234739, 0 )
+mesh = SubResource( 5 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="Disc"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.234739, 0 )
+shape = SubResource( 6 )
+
+[node name="Players" type="Node" parent="."]

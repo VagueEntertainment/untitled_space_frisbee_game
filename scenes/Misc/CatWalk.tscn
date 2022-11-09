@@ -14,15 +14,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 shadow_enabled = true
 shadow_bias = 0.7
 omni_range = 30.0
-
-[node name="OmniLight3" type="OmniLight" parent="Lights"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.03452, -1, 0 )
-visible = false
-shadow_enabled = true
-omni_range = 10.0
-
-[node name="OmniLight2" type="OmniLight" parent="Lights"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02556, -1, 0 )
-visible = false
-shadow_enabled = true
-omni_range = 10.0

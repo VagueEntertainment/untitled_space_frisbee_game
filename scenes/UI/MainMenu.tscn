@@ -17,23 +17,27 @@ script = ExtResource( 4 )
 anchor_right = 0.161786
 anchor_bottom = 1.0
 margin_right = -1.52588e-05
+rect_clip_content = true
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-margin_right = 221.0
-margin_bottom = 700.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 210.0
+margin_bottom = 690.0
+rect_clip_content = true
 custom_constants/separation = 20
 
 [node name="Control" type="Control" parent="Panel/VBoxContainer"]
-margin_right = 220.0
+margin_right = 200.0
 
 [node name="Play" type="TextureButton" parent="Panel/VBoxContainer"]
 self_modulate = Color( 0.223529, 0.223529, 0.223529, 0.517647 )
 margin_top = 20.0
-margin_right = 220.0
+margin_right = 200.0
 margin_bottom = 84.0
 rect_min_size = Vector2( 0, 64 )
 texture_normal = ExtResource( 1 )
@@ -42,7 +46,6 @@ texture_hover = ExtResource( 1 )
 texture_disabled = ExtResource( 1 )
 texture_focused = ExtResource( 1 )
 expand = true
-stretch_mode = 5
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/Play"]
 anchor_right = 1.0
@@ -57,7 +60,7 @@ uppercase = true
 [node name="Settings" type="TextureButton" parent="Panel/VBoxContainer"]
 self_modulate = Color( 0.219608, 0.219608, 0.219608, 0.52549 )
 margin_top = 104.0
-margin_right = 220.0
+margin_right = 200.0
 margin_bottom = 168.0
 rect_min_size = Vector2( 0, 64 )
 texture_normal = ExtResource( 1 )
@@ -66,7 +69,6 @@ texture_hover = ExtResource( 1 )
 texture_disabled = ExtResource( 1 )
 texture_focused = ExtResource( 1 )
 expand = true
-stretch_mode = 5
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/Settings"]
 anchor_right = 1.0
@@ -80,16 +82,16 @@ uppercase = true
 [node name="Quit" type="TextureButton" parent="Panel/VBoxContainer"]
 self_modulate = Color( 0.278431, 0.278431, 0.278431, 0.454902 )
 margin_top = 188.0
-margin_right = 220.0
+margin_right = 200.0
 margin_bottom = 252.0
 rect_min_size = Vector2( 0, 64 )
+rect_clip_content = true
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 1 )
 texture_hover = ExtResource( 1 )
 texture_disabled = ExtResource( 1 )
 texture_focused = ExtResource( 1 )
 expand = true
-stretch_mode = 5
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/Quit"]
 anchor_right = 1.0
