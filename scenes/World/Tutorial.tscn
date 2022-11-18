@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/img/Checkerboard_pattern.png" type="Texture" id=2]
 
 [sub_resource type="BoxShape" id=7]
-extents = Vector3( 100, 50, 3.46665 )
+extents = Vector3( 500, 200, 3.467 )
 
 [sub_resource type="BoxShape" id=8]
 extents = Vector3( 100, 102.072, 3.46665 )
@@ -14,13 +14,14 @@ extents = Vector3( 100, 101.399, 3.46665 )
 
 [sub_resource type="SpatialMaterial" id=4]
 params_cull_mode = 1
+albedo_color = Color( 0.192157, 0.192157, 0.192157, 0.0823529 )
 albedo_texture = ExtResource( 2 )
 uv1_scale = Vector3( 18.287, 10.504, 1 )
 uv1_offset = Vector3( -0.217, 1.205, 0 )
 
 [sub_resource type="CubeMesh" id=1]
 material = SubResource( 4 )
-size = Vector3( 200, 100, 200 )
+size = Vector3( 1000, 400, 1000 )
 
 [sub_resource type="CylinderMesh" id=2]
 top_radius = 20.0
@@ -42,27 +43,27 @@ script = ExtResource( 1 )
 [node name="StaticBody" type="StaticBody" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 99.2389 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 499.239 )
 shape = SubResource( 7 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -101.481 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -499.481 )
 shape = SubResource( 7 )
 
 [node name="CollisionShape3" type="CollisionShape" parent="StaticBody"]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -100.36, 0, -1.12129 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -500.36, 0, -1.121 )
 shape = SubResource( 7 )
 
 [node name="CollisionShape4" type="CollisionShape" parent="StaticBody"]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 100.36, 0, -1.12128 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 500.36, 0, -1.121 )
 shape = SubResource( 7 )
 
 [node name="CollisionShape5" type="CollisionShape" parent="StaticBody"]
-transform = Transform( 1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, -3.97451, -51.9083, -1.12129 )
+transform = Transform( 1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, -3.975, -200.908, -1.121 )
 shape = SubResource( 8 )
 
 [node name="CollisionShape6" type="CollisionShape" parent="StaticBody"]
-transform = Transform( 1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, -4.38688e-06, 51.9083, -1.12128 )
+transform = Transform( 1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 0, 200.908, -1.121 )
 shape = SubResource( 9 )
 
 [node name="CSGMesh" type="CSGMesh" parent="StaticBody"]
@@ -151,11 +152,11 @@ margin = 0.03
 
 [node name="Camera" type="Camera" parent="SpringArm"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.305, 4, 12.177 )
+current = true
 far = 212.3
 
 [node name="Disc" type="RigidBody" parent="."]
 gravity_scale = 0.0
-linear_velocity = Vector3( -100, 0, 0 )
 angular_velocity = Vector3( 0, 200, 0 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="Disc"]

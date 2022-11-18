@@ -1,12 +1,13 @@
 extends Node
 
-# Mistro is this projects "global" or game wide function set. 
+# Mistro is this project's "global" or game wide function set. 
 # Function that go here, can be accessed by all other scripts.
 # Use this sparingly as noise between scenes and nodes can make your game run slower.
 #var camera = Camera.new()
 var big_list:Dictionary = {}
 #var ships:Dictionary = {}
 var ships:Array = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -51,11 +52,13 @@ func mouse_input(obj,event):
 		obj.rot.x = clamp(obj.rot.x - event.relative.y * obj.MOUSE_SENSITIVITY, -1.57, 1.57)
 		obj.transform.basis = Basis(obj.rot)
 
-func process_movement(obj,delta):
-	#obj.dir.y = 0
+func process_movement_walk(obj,delta):
+	
 	obj.dir = obj.dir.normalized()
-
+	
+	
 	obj.vel.y += delta * obj.GRAVITY
+	
 
 	var hvel = obj.vel
 	#hvel.y = 0
@@ -72,9 +75,39 @@ func process_movement(obj,delta):
 	hvel = hvel.linear_interpolate(target, accel * delta)
 	obj.vel.x = hvel.x
 	obj.vel.y = hvel.y
-	obj.vel.z = hvel.z
+	obj.vel.z = hvel.z * obj.thrust
 	obj.vel = obj.move_and_slide(obj.vel, Vector3(0, 1, 0), 0.05, 4, deg2rad(obj.MAX_SLOPE_ANGLE))
 	
+
+func process_movement_fly(obj,delta):
+	
+	obj.dir = obj.dir.normalized()
+	
+	#if obj.dir.z < 0 and obj.thrust < obj.MAX_SPEED:
+	#	obj.thrust -= 1
+	
+	
+	obj.vel.y += delta * obj.GRAVITY
+	#obj.vel.z += delta * obj.thrust
+	
+
+	var hvel = obj.vel
+	#hvel.y = 0
+
+	obj.target = obj.dir
+	obj.target *= obj.MAX_SPEED
+
+	var accel
+	if obj.dir.dot(hvel) > 0:
+		accel = obj.ACCEL
+	else:
+		accel = obj.ACCEL
+
+	hvel = hvel.linear_interpolate(obj.target, accel * delta)
+	obj.vel.x = hvel.x
+	obj.vel.y = hvel.y
+	obj.vel.z = hvel.z 
+	obj.vel = obj.move_and_slide(obj.vel, Vector3(0, 1, 0), 0.05, 4, deg2rad(obj.MAX_SLOPE_ANGLE))
 
 #### We're using the documented defaults for a kinematic character from Godot's website. Edited for use in Mistro instead of needing to be copied and pasted every node.
 	
@@ -104,7 +137,7 @@ func process_input(obj,camera,delta):
 	# ----------------------------------
 
 	# ----------------------------------
-	# Jumping
+	# Jump
 	if obj.is_on_floor():
 		if Input.is_action_just_pressed("movement_jump"):
 			obj.vel.y = obj.JUMP_SPEED

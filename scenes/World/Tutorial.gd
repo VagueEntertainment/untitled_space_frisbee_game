@@ -11,7 +11,9 @@ var positions:Dictionary = {}
 func _ready():
 	ships = Mistro.load_ships()
 	if load_positions():
-		print(positions)
+		load_player()
+		#print(positions)
+		#$SpringArm/Camera.make_current()
 	#get_player_positions()
 	pass # Replace with function body.
 
@@ -43,3 +45,9 @@ func load_positions():
 				positions[team.name][cat.name].append(p)
 	
 	return 1
+	
+func load_player(playernum = 1):
+	var player = load("res://scenes/Player.tscn").instance()
+	player.translation = positions["Team1"]["Strikers"][0].translation
+	player.rotation = positions["Team1"]["Strikers"][0].rotation
+	$Players.add_child(player)
