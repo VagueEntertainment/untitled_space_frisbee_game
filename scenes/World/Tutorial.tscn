@@ -1,16 +1,17 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/World/Tutorial.gd" type="Script" id=1]
 [ext_resource path="res://assets/img/Checkerboard_pattern.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Misc/Discs/Disc.tscn" type="PackedScene" id=3]
 
 [sub_resource type="BoxShape" id=7]
 extents = Vector3( 500, 200, 3.467 )
 
 [sub_resource type="BoxShape" id=8]
-extents = Vector3( 100, 102.072, 3.46665 )
+extents = Vector3( 498.946, 497.401, 3.46665 )
 
 [sub_resource type="BoxShape" id=9]
-extents = Vector3( 100, 101.399, 3.46665 )
+extents = Vector3( 494.685, 499.955, 3.46665 )
 
 [sub_resource type="SpatialMaterial" id=4]
 params_cull_mode = 1
@@ -30,12 +31,6 @@ height = 0.03
 radial_segments = 12
 
 [sub_resource type="CylinderShape" id=3]
-
-[sub_resource type="CylinderMesh" id=5]
-height = 0.1
-
-[sub_resource type="ConvexPolygonShape" id=6]
-points = PoolVector3Array( 0.199019, 0.05, 0.906863, -0.120778, -0.0580645, -1.00806, -0.217677, -0.0580645, -0.991882, 0.217677, -0.0580645, 0.991882, -0.991882, -0.0580645, 0.21748, -0.774064, 0.05, -0.52326, 0.862657, 0.05, -0.346434, 1.00806, -0.0580645, 0.120778, -0.729857, 0.05, 0.582262, 0.110426, 0.05, -0.921659, 0.637046, -0.0580645, -0.798281, 0.774064, 0.05, 0.52326, -0.491797, -0.0580645, 0.894983, -0.846632, -0.0580645, -0.572315, 0.637046, -0.0580645, 0.798281, -0.921659, 0.05, -0.110426, -0.449643, 0.05, -0.81827, -0.258021, 0.05, 0.892068, 0.582442, 0.05, -0.729857, 0.894983, -0.0580645, -0.491797, 0.921659, 0.05, 0.110426, -0.846632, -0.0580645, 0.572315, 0.282211, -0.0580645, -0.975502, -0.991882, -0.0580645, -0.21748, 0.894983, -0.0580645, 0.491797, -0.637046, -0.0580645, -0.798281, -0.892068, 0.05, 0.258021, -0.120778, -0.0580645, 1.00806, 0.449643, 0.05, 0.81827, 1.00806, -0.0580645, -0.120778, -0.582442, 0.05, 0.729857, -0.199019, 0.05, -0.906863, 0.449643, 0.05, -0.81827, 0.729857, 0.05, -0.582262, -0.862657, 0.05, -0.346254, 0.892068, 0.05, 0.258021, -0.637046, -0.0580645, 0.798281, -0.378912, -0.0580645, -0.943531, 0.921659, 0.05, -0.110426, 0.378912, -0.0580645, 0.943334, 0.110426, 0.05, 0.921659, 0.582442, 0.05, 0.729857, -0.582442, 0.05, -0.729857, 0.798281, -0.0580645, 0.636849, -1.00806, -0.0580645, 0.120778, -0.81827, 0.05, 0.449643, -0.943531, -0.0580645, 0.378715, 0.491797, -0.0580645, -0.894983, 0.975699, -0.0580645, -0.282211, 0.120778, -0.0580645, -1.00806, 0.798281, -0.0580645, -0.636849, -0.449643, 0.05, 0.81827, -0.921659, 0.05, 0.110426, -0.894983, -0.0580645, -0.491797, -0.110426, 0.05, 0.921659, 0.975699, -0.0580645, 0.282211, -0.282211, -0.0580645, 0.975699, 0.346434, 0.05, -0.862476, -0.798281, -0.0580645, -0.636849, -1.00806, -0.0580645, -0.120778, 0.120778, -0.0580645, 1.00806, 0.491797, -0.0580645, 0.894983, -0.491797, -0.0580645, -0.894983, 0.862657, 0.05, 0.346434 )
 
 [node name="Tutorial" type="Spatial"]
 script = ExtResource( 1 )
@@ -59,7 +54,7 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 500.36,
 shape = SubResource( 7 )
 
 [node name="CollisionShape5" type="CollisionShape" parent="StaticBody"]
-transform = Transform( 1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, -3.975, -200.908, -1.121 )
+transform = Transform( 1.91069e-15, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, -1.1343, -200.908, -1.121 )
 shape = SubResource( 8 )
 
 [node name="CollisionShape6" type="CollisionShape" parent="StaticBody"]
@@ -155,17 +150,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.305, 4, 12.177 )
 current = true
 far = 212.3
 
-[node name="Disc" type="RigidBody" parent="."]
-gravity_scale = 0.0
-angular_velocity = Vector3( 0, 200, 0 )
-
-[node name="MeshInstance2" type="MeshInstance" parent="Disc"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.234739, 0 )
-mesh = SubResource( 5 )
-skeleton = NodePath("../..")
-
-[node name="CollisionShape" type="CollisionShape" parent="Disc"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.234739, 0 )
-shape = SubResource( 6 )
+[node name="Disc" parent="." instance=ExtResource( 3 )]
+angular_velocity = Vector3( 0, 4000, 0 )
 
 [node name="Players" type="Node" parent="."]

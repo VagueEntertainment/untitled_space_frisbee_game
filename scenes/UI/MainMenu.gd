@@ -26,6 +26,8 @@ func _on_Settings_pressed():
 
 
 func _on_Play_pressed():
+	$main.hide()
+	$play.show()
 	pass # Replace with function body.
 
 
@@ -34,3 +36,9 @@ func _on_Play_pressed():
 #	print("VBox: ",$Panel/VBoxContainer.rect_size.x)
 #	print("Control: ",$Panel/VBoxContainer/Control.rect_size.x)
 #	pass # Replace with function body.
+
+
+func _on_Back_pressed():
+	$main.show()
+	$play.hide()
+	pass # Replace with function body.

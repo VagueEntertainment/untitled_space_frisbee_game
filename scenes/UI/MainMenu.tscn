@@ -1,41 +1,40 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/img/button_back.svg" type="Texture" id=1]
 [ext_resource path="res://assets/img/logo.svg" type="Texture" id=2]
 [ext_resource path="res://assets/Fonts/default.tres" type="DynamicFont" id=3]
 [ext_resource path="res://scenes/UI/MainMenu.gd" type="Script" id=4]
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.0862745, 0.0862745, 0.0862745, 0.619608 )
+[ext_resource path="res://scenes/UI/DefaultPanel.tres" type="StyleBox" id=5]
+[ext_resource path="res://scenes/UI/News.tscn" type="PackedScene" id=6]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
 
-[node name="Panel" type="PanelContainer" parent="."]
-anchor_right = 0.161786
+[node name="main" type="PanelContainer" parent="."]
+anchor_right = 0.169107
 anchor_bottom = 1.0
-margin_right = -1.52588e-05
+margin_right = -1.0
 rect_clip_content = true
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-margin_right = 221.0
+[node name="VBoxContainer" type="VBoxContainer" parent="main"]
+margin_right = 230.0
 margin_bottom = 700.0
 rect_clip_content = true
 custom_constants/separation = 20
 
-[node name="Control" type="Control" parent="Panel/VBoxContainer"]
-margin_right = 220.0
+[node name="Control" type="Control" parent="main/VBoxContainer"]
+margin_right = 230.0
 
-[node name="Play" type="TextureButton" parent="Panel/VBoxContainer"]
+[node name="Play" type="TextureButton" parent="main/VBoxContainer"]
 self_modulate = Color( 0.223529, 0.223529, 0.223529, 0.517647 )
 margin_top = 20.0
-margin_right = 220.0
+margin_right = 230.0
 margin_bottom = 84.0
 rect_min_size = Vector2( 0, 64 )
 texture_normal = ExtResource( 1 )
@@ -45,7 +44,7 @@ texture_disabled = ExtResource( 1 )
 texture_focused = ExtResource( 1 )
 expand = true
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/Play"]
+[node name="Label" type="Label" parent="main/VBoxContainer/Play"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -5.0
@@ -55,10 +54,10 @@ align = 1
 valign = 1
 uppercase = true
 
-[node name="Tutorial" type="TextureButton" parent="Panel/VBoxContainer"]
+[node name="Tutorial" type="TextureButton" parent="main/VBoxContainer"]
 self_modulate = Color( 0.219608, 0.219608, 0.219608, 0.52549 )
 margin_top = 104.0
-margin_right = 220.0
+margin_right = 230.0
 margin_bottom = 168.0
 rect_min_size = Vector2( 0, 64 )
 texture_normal = ExtResource( 1 )
@@ -68,7 +67,7 @@ texture_disabled = ExtResource( 1 )
 texture_focused = ExtResource( 1 )
 expand = true
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/Tutorial"]
+[node name="Label" type="Label" parent="main/VBoxContainer/Tutorial"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = ExtResource( 3 )
@@ -77,15 +76,15 @@ align = 1
 valign = 1
 uppercase = true
 
-[node name="split" type="HSeparator" parent="Panel/VBoxContainer"]
+[node name="split" type="HSeparator" parent="main/VBoxContainer"]
 margin_top = 188.0
-margin_right = 220.0
+margin_right = 230.0
 margin_bottom = 192.0
 
-[node name="Settings" type="TextureButton" parent="Panel/VBoxContainer"]
+[node name="Settings" type="TextureButton" parent="main/VBoxContainer"]
 self_modulate = Color( 0.219608, 0.219608, 0.219608, 0.52549 )
 margin_top = 212.0
-margin_right = 220.0
+margin_right = 230.0
 margin_bottom = 276.0
 rect_min_size = Vector2( 0, 64 )
 texture_normal = ExtResource( 1 )
@@ -95,7 +94,7 @@ texture_disabled = ExtResource( 1 )
 texture_focused = ExtResource( 1 )
 expand = true
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/Settings"]
+[node name="Label" type="Label" parent="main/VBoxContainer/Settings"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = ExtResource( 3 )
@@ -104,16 +103,16 @@ align = 1
 valign = 1
 uppercase = true
 
-[node name="Control3" type="Control" parent="Panel/VBoxContainer"]
+[node name="Control3" type="Control" parent="main/VBoxContainer"]
 margin_top = 296.0
-margin_right = 220.0
+margin_right = 230.0
 margin_bottom = 356.0
 rect_min_size = Vector2( 0, 60 )
 
-[node name="Quit" type="TextureButton" parent="Panel/VBoxContainer"]
+[node name="Quit" type="TextureButton" parent="main/VBoxContainer"]
 self_modulate = Color( 0.278431, 0.278431, 0.278431, 0.454902 )
 margin_top = 376.0
-margin_right = 220.0
+margin_right = 230.0
 margin_bottom = 440.0
 rect_min_size = Vector2( 0, 64 )
 rect_clip_content = true
@@ -124,11 +123,150 @@ texture_disabled = ExtResource( 1 )
 texture_focused = ExtResource( 1 )
 expand = true
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/Quit"]
+[node name="Label" type="Label" parent="main/VBoxContainer/Quit"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = ExtResource( 3 )
 text = "Quit"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="play" type="PanelContainer" parent="."]
+visible = false
+anchor_right = 0.161786
+anchor_bottom = 1.0
+margin_right = 9.00032
+rect_clip_content = true
+custom_styles/panel = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="play"]
+margin_right = 221.0
+margin_bottom = 700.0
+rect_clip_content = true
+custom_constants/separation = 20
+
+[node name="Title" type="Label" parent="play/VBoxContainer"]
+visible = false
+margin_right = 220.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 3 )
+text = "Mode"
+align = 1
+uppercase = true
+
+[node name="split2" type="HSeparator" parent="play/VBoxContainer"]
+visible = false
+margin_top = 67.0
+margin_right = 220.0
+margin_bottom = 71.0
+
+[node name="Control" type="Control" parent="play/VBoxContainer"]
+margin_top = 91.0
+margin_right = 220.0
+margin_bottom = 91.0
+
+[node name="Internet" type="TextureButton" parent="play/VBoxContainer"]
+self_modulate = Color( 0.223529, 0.223529, 0.223529, 0.517647 )
+margin_top = 91.0
+margin_right = 220.0
+margin_bottom = 155.0
+rect_min_size = Vector2( 0, 64 )
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 1 )
+texture_disabled = ExtResource( 1 )
+texture_focused = ExtResource( 1 )
+expand = true
+
+[node name="Label" type="Label" parent="play/VBoxContainer/Internet"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -5.0
+custom_fonts/font = ExtResource( 3 )
+text = "Internet"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Lan" type="TextureButton" parent="play/VBoxContainer"]
+self_modulate = Color( 0.219608, 0.219608, 0.219608, 0.52549 )
+margin_top = 175.0
+margin_right = 220.0
+margin_bottom = 239.0
+rect_min_size = Vector2( 0, 64 )
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 1 )
+texture_disabled = ExtResource( 1 )
+texture_focused = ExtResource( 1 )
+expand = true
+
+[node name="Label" type="Label" parent="play/VBoxContainer/Lan"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Network"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="split" type="HSeparator" parent="play/VBoxContainer"]
+visible = false
+margin_top = 259.0
+margin_right = 220.0
+margin_bottom = 263.0
+
+[node name="Local" type="TextureButton" parent="play/VBoxContainer"]
+self_modulate = Color( 0.219608, 0.219608, 0.219608, 0.52549 )
+margin_top = 259.0
+margin_right = 220.0
+margin_bottom = 323.0
+rect_min_size = Vector2( 0, 64 )
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 1 )
+texture_disabled = ExtResource( 1 )
+texture_focused = ExtResource( 1 )
+expand = true
+
+[node name="Label" type="Label" parent="play/VBoxContainer/Local"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Local"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Control3" type="Control" parent="play/VBoxContainer"]
+margin_top = 343.0
+margin_right = 220.0
+margin_bottom = 403.0
+rect_min_size = Vector2( 0, 60 )
+
+[node name="Back" type="TextureButton" parent="play/VBoxContainer"]
+self_modulate = Color( 0.278431, 0.278431, 0.278431, 0.454902 )
+margin_top = 423.0
+margin_right = 220.0
+margin_bottom = 487.0
+rect_min_size = Vector2( 0, 64 )
+rect_clip_content = true
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 1 )
+texture_disabled = ExtResource( 1 )
+texture_focused = ExtResource( 1 )
+expand = true
+
+[node name="Label" type="Label" parent="play/VBoxContainer/Back"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Back"
 align = 1
 valign = 1
 uppercase = true
@@ -146,7 +284,13 @@ texture = ExtResource( 2 )
 expand = true
 stretch_mode = 6
 
-[connection signal="pressed" from="Panel/VBoxContainer/Play" to="." method="_on_Play_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Tutorial" to="." method="_on_Settings_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[node name="News" parent="." instance=ExtResource( 6 )]
+
+[connection signal="pressed" from="main/VBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="main/VBoxContainer/Tutorial" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="main/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="main/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="play/VBoxContainer/Internet" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="play/VBoxContainer/Lan" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="play/VBoxContainer/Local" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="play/VBoxContainer/Back" to="." method="_on_Back_pressed"]

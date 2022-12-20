@@ -107,6 +107,11 @@ omni_range = 30.867
 omni_shadow_mode = 0
 omni_shadow_detail = 0
 
+[node name="OmniLight" type="OmniLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.2009, -0.235718, 16.4601 )
+shadow_enabled = true
+omni_range = 27.4292
+
 [node name="Guard_Rails" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0 )
 
