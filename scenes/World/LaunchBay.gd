@@ -24,7 +24,7 @@ func _on_Timer_timeout():
 	i += 1
 	#$rotunda.get_child(door).clear_ship()
 	if $rotunda.get_child(door).closed:
-		$rotunda.get_child(door).load_ship(ships[int(rand_range(0,6))])
+		$rotunda.get_child(door).load_ship(ships[int(rand_range(0,6))]["obj"])
 	else:
 		$rotunda.get_child(door).close()
 	
@@ -40,4 +40,10 @@ func _on_Timer_timeout():
 		else:
 			$Bay/Medium_Doors.close()
 		
+	pass # Replace with function body.
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "Hanger":
+		pass
 	pass # Replace with function body.

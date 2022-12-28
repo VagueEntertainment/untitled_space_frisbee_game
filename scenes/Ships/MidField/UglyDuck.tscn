@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/models/ships/Ugly_Duck.glb" type="PackedScene" id=1]
 
-[node name="ship" type="Spatial"]
+[node name="ship_midfield_Ugly_Duck" type="Spatial"]
 
 [node name="Ugly_Duck" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0 )

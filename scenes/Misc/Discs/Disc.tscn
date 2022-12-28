@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/models/discs/default.glb" type="PackedScene" id=1]
+
+[sub_resource type="CylinderMesh" id=5]
+height = 0.1
+
+[sub_resource type="CylinderShape" id=6]
+height = 0.4337
+radius = 3.98574
+
+[node name="Disc" type="RigidBody"]
+gravity_scale = 0.0
+angular_velocity = Vector3( 0, 200, 0 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.234739, 0 )
+visible = false
+mesh = SubResource( 5 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0122263, 0 )
+shape = SubResource( 6 )
+
+[node name="default" parent="." instance=ExtResource( 1 )]
+
+[editable path="default"]

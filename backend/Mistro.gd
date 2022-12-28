@@ -8,6 +8,7 @@ var big_list:Dictionary = {}
 #var ships:Dictionary = {}
 var ships:Array = []
 
+var player1:Dictionary = {}
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -240,12 +241,12 @@ func find_target(targets_list):
 func load_ships():
 	if !ships:
 		ships = [
-			preload("res://scenes/Ships/Strikers/LionHead.tscn"),
-			preload("res://scenes/Ships/Strikers/X1.tscn"),
-			preload("res://scenes/Ships/Strikers/S-Type.tscn"),
-			preload("res://scenes/Ships/MidField/StingRay.tscn"),
-			preload("res://scenes/Ships/MidField/UglyDuck.tscn"),
-			preload("res://scenes/Ships/MidField/Catamaran.tscn")
+			{"obj":preload("res://scenes/Ships/Strikers/LionHead.tscn"),"class":"striker"},
+			{"obj":preload("res://scenes/Ships/Strikers/X1.tscn"),"class":"striker"},
+			{"obj":preload("res://scenes/Ships/Strikers/S-Type.tscn"),"class":"striker"},
+			{"obj":preload("res://scenes/Ships/MidField/StingRay.tscn"),"class":"midfield"},
+			{"obj":preload("res://scenes/Ships/MidField/UglyDuck.tscn"),"class":"midfield"},
+			{"obj":preload("res://scenes/Ships/MidField/Catamaran.tscn"),"class":"midfield"}
 			]
 	
 	return ships
