@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/models/ships/S-Type.glb" type="PackedScene" id=1]
 
-[node name="ship" type="Spatial"]
+[node name="ship_striker_S_Type" type="Spatial"]
 
 [node name="S-Type" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
