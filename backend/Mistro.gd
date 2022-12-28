@@ -49,11 +49,12 @@ func mouse_input(obj,event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		# Horizontal mouse look.
 		#obj.rot.y -= event.relative.x * obj.MOUSE_SENSITIVITY
-		obj.turn_input -= event.relative.x * obj.MOUSE_SENSITIVITY
 		# Vertical mouse look.
 		#obj.rot.x = clamp(obj.rot.x - event.relative.y * obj.MOUSE_SENSITIVITY, -1.57, 1.57)
-		obj.pitch_input = clamp(obj.rot.x - event.relative.y * obj.MOUSE_SENSITIVITY, -1.57, 1.57)
+		#obj.pitch_input = clamp(obj.rot.x - event.relative.y * obj.TURN_SPEED, -1.57, 1.57)
+		#obj.turn_input -= event.relative.x * obj.MOUSE_SENSITIVITY
 		#obj.transform.basis = Basis(obj.rot)
+		pass
 
 func process_movement_walk(obj,delta):
 	
@@ -115,6 +116,7 @@ func process_movement_fly(obj,delta):
 	obj.transform.basis = obj.transform.basis.rotated(obj.transform.basis.y,obj.turn_input * obj.TURN_SPEED * delta)
 	obj.transform.basis = obj.transform.basis.rotated(obj.transform.basis.z,obj.rotation_input * obj.TURN_SPEED * delta)
 	
+	
 	obj.ship.rotation.y = lerp(obj.ship.rotation.y,-obj.turn_input * obj.TURN_SPEED * delta ,1.5*delta)	
 	
 	hvel = hvel.linear_interpolate(obj.target, accel * delta)
@@ -144,29 +146,30 @@ func process_input(obj,camera,delta):
 		input_movement_vector.x -= 1
 	if Input.is_action_pressed("movement_strafe_right"):
 		input_movement_vector.x += 1
-	if Input.is_action_pressed("movement_roll_left"):
-		input_rotation_vector.z -= 1
-	if Input.is_action_pressed("movement_roll_right"):
-		input_rotation_vector.z += 1
+#	if Input.is_action_pressed("movement_roll_left"):
+#		input_rotation_vector.z -= 1
+#	if Input.is_action_pressed("movement_roll_right"):
+#		input_rotation_vector.z += 1
 	
-	if Input.is_action_pressed("ui_up"):
-		input_rotation_vector.x += 1
-	if Input.is_action_pressed("ui_down"):
-		input_rotation_vector.x -= 1
-	
-	if Input.is_action_pressed("ui_left"):
-		input_rotation_vector.y += 1
-	if Input.is_action_pressed("ui_right"):
-		input_rotation_vector.y -= 1
+#	if Input.is_action_pressed("ui_up"):
+#		input_rotation_vector.x += 1
+#	if Input.is_action_pressed("ui_down"):
+#		input_rotation_vector.x -= 1
+#	
+#	if Input.is_action_pressed("ui_left"):
+#		input_rotation_vector.y += 1
+#	if Input.is_action_pressed("ui_right"):
+#		input_rotation_vector.y -= 1
 		
 	if obj.INVERSE_CONTROL:
 		obj.pitch_input =  Input.get_action_strength("ui_up") - Input.get_action_strength("ui_down")
 	else:
 		obj.pitch_input = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 		
-	obj.turn_input = Input.get_action_strength("ui_left") - Input.get_action_strength("ui_right") 
+	#obj.turn_input = Input.get_action_strength("ui_left") - Input.get_action_strength("ui_right") 
 	obj.rotation_input = Input.get_action_strength("movement_roll_right") - Input.get_action_strength("movement_roll_left")
-	
+	obj.thrust_input = Input.get_action_strength("movement_forward") - Input.get_action_strength("movement_backward")
+	obj.strafe_input = Input.get_action_strength("movement_strafe_right") - Input.get_action_strength("movement_strafe_left")
 
 	input_movement_vector = input_movement_vector.normalized()
 	input_rotation_vector = input_rotation_vector.normalized()
@@ -174,9 +177,9 @@ func process_input(obj,camera,delta):
 	# Basis vectors are already normalized.
 	obj.dir += -cam_xform.basis.z * input_movement_vector.y
 	obj.dir += cam_xform.basis.x * input_movement_vector.x
-	obj.rot.x += input_rotation_vector.x 
-	obj.rot.z += input_rotation_vector.z 
-	obj.rot.y += input_rotation_vector.y 
+	#obj.rot.x += input_rotation_vector.x 
+	#obj.rot.z += input_rotation_vector.z 
+	#obj.rot.y += input_rotation_vector.y 
 		
 	# ----------------------------------
 

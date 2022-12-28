@@ -28,6 +28,8 @@ var vel = Vector3()
 var turn_input = 0
 var pitch_input = 0
 var rotation_input = 0
+var strafe_input = 0
+var thrust_input = 0
 
 const DEACCEL= 5
 const MAX_SLOPE_ANGLE = 40
@@ -45,7 +47,7 @@ var actions:Array = ["target_1","target_2","target_3","target_4","grab","launch"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	load_ship("res://scenes/Ships/Strikers/X1.tscn")
+	load_ship("res://scenes/Ships/Strikers/S-Type.tscn")
 	$Camera.make_current()
 	#rot = rotation
 	pre_dir = Vector3.ZERO
