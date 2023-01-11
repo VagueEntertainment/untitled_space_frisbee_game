@@ -88,6 +88,7 @@ func _on_ship_type_input(event,obj):
 func _on_SelectionPip_input(event,obj):
 	if event.is_pressed():
 		emit_signal("ship_selection","ship_class",[Mistro.player1["ship_class"],int(obj.name[-1])-1])
+		
 		for c in $ShipSelect/Control/SelectionIndicator.get_children():
 			if c.pressed and ! c.name == obj.name:
 				c.pressed = false
@@ -106,13 +107,9 @@ func _on_ShipSelect_visibility_changed():
 	pass # Replace with function body.
 
 func _on_cross_talk(type,opt):
-	#print("From Hanger UI")
-	#print("type: ",type)
-	#print("opt: ",opt)
-	
-	#match type:
-		#"ship_class":
-		#	$ShipSelect/Control/SelectionIndicator.get_child(opt[1]).pressed = true
+	match type:
+		"ship_data":
+			$ShipSelect/Control/ShipStats.load_stats(opt)
 	pass
 
 func _on_Class_Select_visibility_changed():

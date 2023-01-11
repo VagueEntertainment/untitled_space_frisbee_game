@@ -8,10 +8,11 @@ var hanger = preload("res://scenes/World/Hanger.tscn")
 # var b = "text"
 var background 
 signal cross_talk(type,opt)
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_start()
-	
 	pass # Replace with function body.
 
 
@@ -57,14 +58,21 @@ func to_hanger(mode):
 		$Hanger.connect("selection",self,"_on_selection")
 		connect("cross_talk",$Hanger,"_on_cross_talk")
 		$Hanger.connect("ship_selection",self,"_on_ship_selection")
+		
 	if !background.is_connected("change_ship",self,"_on_ship_changed"):
 		background.connect("change_ship",self,"_on_ship_changed")
 		connect("cross_talk",background,"_on_cross_talk")
+		background.connect("cross_talk",self,"_on_cross_talk")
 		
 func _on_cross_talk(type,opt):
+	match type:
+		"selection":
+			emit_signal("cross_talk","ship_data",opt)
+	#print("from com")
+	#print("type: ",type)
+	#print("data: ",opt)
 	pass
 	
 func _on_ship_selection(type,index):
 	emit_signal("cross_talk",type,index)
-	
 	

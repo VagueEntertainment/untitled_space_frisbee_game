@@ -1,16 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/models/ships/LionHead.glb" type="PackedScene" id=1]
-
-[sub_resource type="CapsuleMesh" id=1]
-radius = 2.0
-mid_height = 4.8
+[ext_resource path="res://scenes/Ships/Strikers/ship_striker_LionHead.gd" type="Script" id=2]
 
 [node name="ship_striker_LionHead" type="Spatial"]
-
-[node name="MeshInstance" type="MeshInstance" parent="."]
-visible = false
-mesh = SubResource( 1 )
+script = ExtResource( 2 )
 
 [node name="LionHead" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0 )

@@ -5,11 +5,11 @@ extends Spatial
 # var a = 2
 # var b = "text"
 const stats:Dictionary = {
-	"Name":"X-1",
-	"Hull":20,
-	"Speed":300,
-	"Turn":80,
-	"Accel":100
+	"Name":"Catamaran",
+	"Hull":100,
+	"Speed":240,
+	"Turn":50,
+	"Accel":50
 }
 
 # Called when the node enters the scene tree for the first time.

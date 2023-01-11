@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/models/ships/StingRay.glb" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Ships/MidField/StingRay.gd" type="Script" id=2]
 
 [node name="ship_midfield_StingRay" type="Spatial"]
+script = ExtResource( 2 )
+stats = {
+"Accel": 30,
+"Hull": 30,
+"Name": "X-1",
+"Speed": 270,
+"Turn": 100
+}
 
 [node name="StingRay" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0 )
