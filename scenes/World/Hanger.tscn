@@ -207,7 +207,7 @@ environment = ExtResource( 3 )
 
 [node name="Fill" type="OmniLight" parent="Lights"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.34052, 0 )
-light_energy = 0.716
+light_energy = 0.621
 shadow_enabled = true
 shadow_color = Color( 0.666667, 0.666667, 0.666667, 1 )
 shadow_bias = 0.554
@@ -236,13 +236,14 @@ omni_range = 15.2555
 
 [node name="SpotLight" type="SpotLight" parent="Lights"]
 transform = Transform( 0.919259, 0, 0.393653, -0.15392, 0.920389, 0.359434, -0.362314, -0.391004, 0.846076, 3.87869, -1.73893, 12.1497 )
-light_energy = 1.568
+light_energy = 0.905
 shadow_enabled = true
 shadow_color = Color( 0.666667, 0.666667, 0.666667, 1 )
 spot_range = 21.563
 
 [node name="SpotLight2" type="SpotLight" parent="Lights"]
 transform = Transform( 0.395182, 0.563792, -0.725238, 0.286867, 0.674274, 0.680487, 0.872662, -0.476963, 0.104728, -11.7619, 6.60031, 2.07943 )
+light_energy = 0.621
 shadow_enabled = true
 shadow_color = Color( 0.552941, 0.552941, 0.552941, 1 )
 spot_range = 20.908

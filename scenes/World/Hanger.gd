@@ -5,6 +5,7 @@ extends Spatial
 # var a = 2
 # var b = "text"
 signal change_ship(type,index)
+signal cross_talk(type,data)
 var current_index = 0
 var ship = null
 var classes:Dictionary = {}
@@ -43,12 +44,12 @@ func _change_ship(ShipClass,index):
 	ship.translation.z = $Selection.translation.z
 	ship.rotation = $Selection.rotation
 	current_index = classes[ShipClass][index]
+	
+	emit_signal("cross_talk","selection",[ShipClass,index,ship.stats])
 		
 
 func _on_cross_talk(type,opt):
-	print("From Hanger Background")
-	print("type: ",type)
-	print("opt: ",opt)
+	
 	match type:
 		"ship_class":
 			emit_signal("change_ship",opt[0],opt[1])

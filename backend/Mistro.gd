@@ -9,6 +9,27 @@ var big_list:Dictionary = {}
 var ships:Array = []
 
 var player1:Dictionary = {}
+
+var ship_class_base_stats:Dictionary = {
+	"Striker":{
+		"Hull":30,
+		"Speed":270,
+		"Turn":100,
+		"Accel":50
+		},
+	"Midfield":{
+		"Hull":100,
+		"Speed":200,
+		"Turn":50,
+		"Accel":30
+		},
+	"Defender":{
+		"Hull":200,
+		"Speed":150,
+		"Turn":40,
+		"Accel":15
+		}
+}
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

@@ -1,13 +1,121 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/UI/ShipStats.gd" type="Script" id=1]
+[ext_resource path="res://assets/img/bar_back1.svg" type="Texture" id=2]
+[ext_resource path="res://assets/img/progress1.svg" type="Texture" id=3]
 
 [node name="ShipStats" type="PanelContainer"]
-anchor_left = 0.825769
-anchor_top = 0.0214286
-anchor_right = 0.986823
-anchor_bottom = 0.411429
+anchor_left = 0.869693
+anchor_top = 0.01
+anchor_right = 0.991947
+anchor_bottom = 0.207143
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 160.0
+margin_bottom = 131.0
+custom_constants/separation = 10
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+margin_right = 153.0
+margin_bottom = 14.0
+grow_horizontal = 0
+text = "Test"
+autowrap = true
+uppercase = true
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 153.0
+margin_bottom = 28.0
+
+[node name="Hull" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 38.0
+margin_right = 153.0
+margin_bottom = 52.0
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/Hull"]
+margin_right = 38.0
+margin_bottom = 14.0
+text = "Hull:"
+uppercase = true
+
+[node name="TextureProgress" type="TextureProgress" parent="VBoxContainer/Hull"]
+margin_left = 48.0
+margin_right = 148.0
+margin_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 3 )
+nine_patch_stretch = true
+stretch_margin_right = 100
+
+[node name="Speed" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 62.0
+margin_right = 153.0
+margin_bottom = 76.0
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/Speed"]
+margin_right = 43.0
+margin_bottom = 14.0
+text = "Speed:"
+uppercase = true
+
+[node name="TextureProgress" type="TextureProgress" parent="VBoxContainer/Speed"]
+margin_left = 53.0
+margin_right = 153.0
+margin_bottom = 14.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 3 )
+nine_patch_stretch = true
+stretch_margin_right = 100
+
+[node name="Accel" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 86.0
+margin_right = 153.0
+margin_bottom = 100.0
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/Accel"]
+margin_right = 43.0
+margin_bottom = 14.0
+text = "Accel:"
+uppercase = true
+
+[node name="TextureProgress" type="TextureProgress" parent="VBoxContainer/Accel"]
+margin_left = 53.0
+margin_right = 153.0
+margin_bottom = 14.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 3 )
+nine_patch_stretch = true
+stretch_margin_right = 100
+
+[node name="Turn" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 110.0
+margin_right = 153.0
+margin_bottom = 124.0
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/Turn"]
+margin_right = 39.0
+margin_bottom = 14.0
+text = "Turn:"
+uppercase = true
+
+[node name="TextureProgress" type="TextureProgress" parent="VBoxContainer/Turn"]
+margin_left = 49.0
+margin_right = 149.0
+margin_bottom = 14.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 3 )
+nine_patch_stretch = true
+stretch_margin_right = 100
