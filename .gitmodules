@@ -1,0 +1,9 @@
+[submodule "backend/movement"]
+	path = backend/movement
+	url = git@github.com:VagueEntertainment/godot-movement.git
+[submodule "backend/ai"]
+	path = backend/ai
+	url = git@github.com:VagueEntertainment/godot-ai.git
+[submodule "backend/cameraman"]
+	path = backend/cameraman
+	url = git@github.com:VagueEntertainment/godot-cameraman.git
