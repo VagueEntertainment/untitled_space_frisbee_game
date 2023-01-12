@@ -63,8 +63,8 @@ func _ready():
 func _physics_process(delta):
 	if ship and $Camera.translation.z < -5:
 		$Camera.translate(Vector3(0,0,-7*delta))
-	Mistro.process_movement_fly(self,delta)
-	Mistro.process_input(self,$Camera,delta)
+	FlightSimple.process_movement_fly(self,delta)
+	General.process_input(self,$Camera,delta)
 	$Control/Speed.text = str(vel.x)
 	pass
 	
@@ -78,7 +78,7 @@ func load_ship(obj):
 	return 1
 
 func _input(event):
-	Mistro.mouse_input(self,event)
+	General.mouse_input(self,event)
 
 func _on_action(act):
 	print(act)

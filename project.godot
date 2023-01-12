@@ -18,6 +18,8 @@ config/icon="res://Icon.svg"
 [autoload]
 
 Mistro="*res://backend/Mistro.tscn"
+General="*res://backend/movement/general.gd"
+FlightSimple="*res://backend/movement/flight_simple.gd"
 
 [display]
 
